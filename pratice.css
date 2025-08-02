@@ -1,0 +1,502 @@
+/* ---
+Modern Gym Theme by Gemini
+Color Palette: Deep Space Blue, Electric Cyan, Fiery Magenta
+Design: Modern, Energetic, High-Tech
+--- */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+
+/* --- Modern CSS Variables --- */
+:root {
+    --primary-color: #007BFF; /* Electric Blue */
+    --primary-color-rgb: 0, 123, 255;
+    --secondary-color: #00F2FF; /* Vibrant Cyan */
+    --accent-color: #E000B4; /* Fiery Magenta */
+    --dark-bg: #0A0A10; /* Near Black - Deep Space */
+    --dark-card-bg: #1A1A2E; /* Dark Blue-Gray */
+    --light-color: #EAEAEA;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background: var(--dark-bg);
+    color: var(--light-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* --- Gradient Text for Headings --- */
+h1, h2 {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+h1 { font-size: 3.5rem; line-height: 1.2; }
+h2 { font-size: 2.8rem; text-align: center; padding-top: 4rem; text-transform: uppercase; letter-spacing: 1.5px; }
+h3 { font-size: 1.8rem; color: var(--primary-color); }
+
+p {
+    margin-bottom: 20px;
+    color: #b0b0b0; /* Slightly dimmer text for better contrast */
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+/* --- Hero Section & Frosted Glass Navbar --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 10, 16, 0.7), rgba(10, 10, 16, 0.8)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+    /* Using a real, high-quality image from Unsplash */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    /* Frosted glass effect */
+    background: rgba(26, 26, 46, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+    background: var(--dark-card-bg);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 1.2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Underline effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--light-color);
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    color: #fff;
+    border: none;
+    border-radius: 50px; /* Pill-shaped button */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.cta-button:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--secondary-color), 0.5);
+}
+
+/* --- Styled Sections & Cards --- */
+section {
+    padding: 4rem 0;
+}
+
+.training-programs, .membership-plans {
+    background-color: var(--dark-bg);
+}
+
+.about-us, .trainer-profiles, .testimonials {
+    background-color: #101018; /* A slightly different dark shade */
+}
+
+/* Base card style */
+.program-card, .trainer-card, .testimonial-card, .plan {
+    background: var(--dark-card-bg);
+    border-radius: 15px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.program-card:hover, .trainer-card:hover, .testimonial-card:hover, .plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+
+/* --- Training Programs Section --- */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    text-align: center;
+}
+
+.program-card i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+/* --- Trainer Profiles Section --- */
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.trainer-card {
+    text-align: center;
+}
+
+.trainer-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.5);
+    transition: transform 0.3s ease;
+}
+
+.trainer-card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Membership Plans: Gradient Border Effect --- */
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.plan {
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden; /* Needed for gradient border */
+}
+
+.plan::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -2px; /* The width of the border */
+    border-radius: inherit; /* Follow the parent's border-radius */
+    background: linear-gradient(135deg, var(--dark-card-bg), var(--dark-card-bg));
+}
+
+.plan.premium::before {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+.plan.premium {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(var(--accent-color), 0.3);
+}
+
+.plan .price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.plan .price span {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.plan ul {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.plan ul li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.plan ul li:last-child {
+    border-bottom: none;
+}
+
+.plan ul li.disabled {
+    text-decoration: line-through;
+    color: #666;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--secondary-color);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* --- Call to Action Section --- */
+.call-to-action {
+    padding: 5rem 0;
+    background: linear-gradient(45deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 16, 0.9)), url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+}
+
+.call-to-action h2 {
+    color: #fff;
+    background: none; /* Override gradient for this section */
+    -webkit-text-fill-color: initial;
+}
+
+#trial-form {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#trial-form input {
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.8);
+    background: transparent;
+    color: #fff;
+    width: 300px;
+    transition: all 0.3s;
+}
+
+#trial-form input::placeholder {
+    color: #ccc;
+}
+
+#trial-form input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(var(--secondary-color), 0.5);
+}
+
+/* --- Footer --- */
+.footer {
+    padding: 3rem 0;
+    background: var(--dark-bg);
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-info {
+    flex: 1;
+    text-align: left;
+}
+
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media a {
+    color: #fff;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* --- Responsive Design --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 65px; /* Adjust for navbar height */
+        flex-direction: column;
+        background-color: var(--dark-card-bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        height: 100vh;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        padding: 1.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .social-media {
+        text-align: center;
+        flex: auto;
+    }
+
+    .social-media a {
+        margin: 0 1rem;
+    }
+}
